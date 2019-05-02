@@ -44,8 +44,6 @@ public class DemoApplication {
         return buildProperties.getVersion();
     }
 
-    //@RequestParam("model") String model, @ReqauestParam(value = "file", required = false) MultipartFile file
-
     @PostMapping("/uploadFile")
     public UploadFileResponse uploadFile(@RequestParam("file") MultipartFile file) {
         String fileName = fileStorageService.storeFile(file);
