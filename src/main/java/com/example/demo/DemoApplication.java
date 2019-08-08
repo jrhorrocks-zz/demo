@@ -24,7 +24,8 @@ public class DemoApplication {
     }
 
     @GetMapping("/")
-    public String base() {
+    public String info() {
+        log.info("Gathering Information...");
         InetAddress inetAddress;
         StringBuilder sb = new StringBuilder();
         LocalDateTime now = LocalDateTime.now();
@@ -39,7 +40,6 @@ public class DemoApplication {
         } catch (Exception e) {
             log.error("Something bad happened..." + e.getMessage());
         }
-
         return sb.toString();
     }
 
